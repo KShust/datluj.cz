@@ -24,7 +24,7 @@ const Settings: React.FC<SettingsProps> = ({ settings, onStartGame, lastResult }
 
   return (
     <div className="settings">
-      <h2>Nastavení bitvy</h2>
+      <h2>Nastavení hry</h2>
       <form onSubmit={handleSubmit} className="settings__form">
         <div className="settings__field">
           <label htmlFor="time">
@@ -72,7 +72,7 @@ const Settings: React.FC<SettingsProps> = ({ settings, onStartGame, lastResult }
         </div>
 
         <button type="submit" className="settings__button">
-          Začít bitvu
+          Začít hru
         </button>
       </form>
 
