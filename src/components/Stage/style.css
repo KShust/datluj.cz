@@ -1,14 +1,50 @@
 .stage {
-  height: 340px;
+  min-height: 400px;
   padding: 32px;
   margin: 32px auto;
   background-color: #efefef;
   border-radius: 8px;
+  max-width: 1200px;
 }
 
-.stage__mistakes {
+.stage__header {
+  margin-bottom: 32px;
+}
+
+.stage__timer {
   text-align: center;
-  margin-bottom: 64px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.stage__stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.stage__stat {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.stage__start-message {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  background-color: white;
+  border-radius: 8px;
+  border: 2px dashed #8fb935;
+}
+
+.stage__start-message p {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
 }
 
 .stage__words {
@@ -16,4 +52,6 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  gap: 8px;
+  min-height: 200px;
 }

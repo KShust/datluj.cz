@@ -1,0 +1,48 @@
+.score-table {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  border: 2px solid #8fb935;
+  position: sticky;
+  top: 20px;
+}
+
+.score-table h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.score-table__empty {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.score-table__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.score-table__table th,
+.score-table__table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.score-table__table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #555;
+}
+
+.score-table__table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.score-table__table tr:last-child td {
+  border-bottom: none;
+}
+

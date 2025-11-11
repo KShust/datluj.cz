@@ -9,7 +9,41 @@ html {
 }
 
 .container {
-  width: 720px;
+  width: 100%;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  padding: 10px;
+}
+
+.container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.app__layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.app__game-screen {
+  flex: 1;
+  min-width: 0;
+}
+
+.app__score-table {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .app__layout {
+    flex-direction: column;
+  }
+  
+  .app__score-table {
+    width: 100%;
+  }
 }

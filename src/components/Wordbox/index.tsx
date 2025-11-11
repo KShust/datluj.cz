@@ -11,6 +11,13 @@ interface IWordboxProp {
 const Wordbox : React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake }) => {
   const [lettersLeft, setLettersLeft] = useState<string>(word);  
   const [mistake, setMistake] = useState<boolean>(false);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
+
+  useEffect(() => {
+    setLettersLeft(word);
+    setMistake(false);
+    setShowSuccess(false);
+  }, [word]);
 
   useEffect(() => {
     if (!active) {
@@ -24,11 +31,16 @@ const Wordbox : React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake })
         setMistake(false);
 
         if (newLetLeft.length === 0) {
-          onFinish();
+          setShowSuccess(true);
+          setTimeout(() => {
+            onFinish();
+            setShowSuccess(false);
+          }, 100);
         }
       } else if (lettersLeft.length > 0) {
         setMistake(true);
         onMistake();
+        setTimeout(() => setMistake(false), 300);
       }
     };
     
@@ -36,7 +48,13 @@ const Wordbox : React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake })
     return () => document.removeEventListener('keyup', handleKeyUp);
   }, [lettersLeft, onFinish, active, onMistake]);
 
-  return <div className={`wordbox ${mistake ? "wordbox--mistake" : ""}`}>{lettersLeft} </div>;
+  const className = `wordbox ${
+    mistake ? "wordbox--mistake" : ""
+  } ${
+    showSuccess ? "wordbox--success" : ""
+  }`.trim();
+
+  return <div className={className}>{lettersLeft} </div>;
 };
 
 export default Wordbox;
